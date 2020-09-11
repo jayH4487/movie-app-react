@@ -1,10 +1,10 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 
 const Context = React.createContext()
 
 function ContextProvider(props) {
     return (
-        <Context.Provider value={9}>
+        <Context.Provider value={ 1 }>
             {props.children}
         </Context.Provider>
     )
