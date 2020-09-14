@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
 
 :root {
     --main-color: white;
@@ -12,7 +12,7 @@ html, body {
 
 body {
     box-sizing: border-box;
-    
+    background: #f4f4f4;
     padding: 1em;
     min-width: 400px;
 }
@@ -26,12 +26,13 @@ header {
     justify-items: center;
     align-items: center;
     border-radius: 1em 0 1em 0;
+    margin-bottom: 2em;
 }
 
 header div {
     width: 80%;
     color: var(--main-color);
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
 }
 
@@ -49,27 +50,17 @@ header div {
     font-family: 'Montserrat', Tahoma, sans-serif;
     height: 2em;
     padding: 0 0.50em;
-    /* background: var(--main-background); */
     border: none;
     border: 1px solid #dddddd;
     border-top-left-radius: 0.5em;
     outline: 0;
-    /* color: var(--main-color); */
-}
-
-.input-group input::placeholder {
-    /* color: var(--main-color); */
-}
-
-.input-group input:focus {
-    /* border: 1px solid var(--main-color); */
 }
 
 .input-group button {
     font-family: 'Montserrat', Tahoma, sans-serif;
     background: var(--main-color);
     color: var(--main-background);
-    font-weight: bold;
+    font-weight: 600;
     font-size: .8em;
     border: none;
     border-bottom-right-radius: 0.5em;
@@ -78,37 +69,44 @@ header div {
 }
 
 .movie-card-container {
-    margin: 2em 2em;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+    
 }
 
 .movie-card {
-    padding: 1em;
-    /* background: orange; */
-    border-radius: 2em 0 2em 0;
-
-}
-
-.movie-title {
-    text-align: center;
-    font-size: 2em;
-    text-transform: uppercase;
-    font-weight: bold;
+    background: white;
+    border-radius: 0.75em;
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.5);
+    margin: 0 auto 2em;
+    width: 270px;
 }
 
 .movie-poster {
-    padding: 20px;
-    min-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    max-width: 100%;
+    max-height: auto;
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
 }
 
-.movie-poster img {
-    max-width: 100%;
-    height: auto;
+.card-content {
+    padding: 0.5em;
+    text-align: center;
+}
+
+.movie-title {
+    margin: 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.movie-year {
+    font-size: 0.75em;
+    text-transform: capitalize;
+    font-weight: 600;
+    letter-spacing: 1.1;
+    color: rgba(0,0,0,0.5)
 }
 
 @media (min-width: 700px) {
@@ -122,5 +120,24 @@ header div {
 
     .logo {
         justify-self: start;
+    }
+
+    .movie-card {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        width: 100%;
+    }
+
+    .card-content {
+        padding: 1em;
+        text-align: left;
+    }
+
+    .movie-poster {
+        max-width: 100%;
+        max-height: 100%;
+        border-top-left-radius: 0.75em;
+        border-bottom-left-radius: 0.75em;
+        border-top-right-radius: 0;
     }
 }

@@ -27,14 +27,10 @@ function MovieCard({movie: { Title, Poster, Year, imdbID }}) {
     return (
 
         <div className="movie-card">
-            <div className="movie-title">
-                <p>{Title}</p>
-            </div>
-            <div className="movie-year">
-                <p>{Year}</p>
-            </div>
-            <div className="movie-poster">
-                <img src={Poster} alt=""></img>
+            <img className="movie-poster" src={Poster} alt=""></img>
+            <div className="card-content">
+                <h2 className="movie-title">{Title}</h2>
+                <p className="movie-year">Release Year: {Year}</p>
             </div>
         </div>
     )
