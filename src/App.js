@@ -22,7 +22,7 @@ function App() {
     function getMovies() {
         (async () => {
             const search = searchValue.trim().replace(/\s+/g, "+")
-            const url = `http://localhost:5001/api/movie/omdbapi?s=${search}`
+            const url = `https://pure-beach-51673.herokuapp.com/api/movie/omdbapi?s=${search}`
             try {
                 const res = await fetch(url)
                 const data = await res.json()

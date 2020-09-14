@@ -12,7 +12,7 @@ function MovieCard({movie: { Title, Poster, Year, imdbID }}) {
 
     function getMovieData() {
         (async () => {
-            const url = `http://localhost:5001/api/movie/omdbapi?i=${imdbID}&plot=short`
+            const url = `https://pure-beach-51673.herokuapp.com/api/movie/omdbapi?i=${imdbID}&plot=short`
             try {
                 const res = await fetch(url)
                 const data = await res.json()
