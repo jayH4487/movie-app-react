@@ -22,7 +22,7 @@ function App() {
     function getMovies() {
         (async () => {
             const search = searchValue.trim().replace(/\s+/g, "+")
-            const url = `http://localhost:5001/api/movie/omdbapi/search/?s=${search}`
+            const url = `http://localhost:5001/api/movie/omdbapi?s=${search}`
             try {
                 const res = await fetch(url)
                 const data = await res.json()

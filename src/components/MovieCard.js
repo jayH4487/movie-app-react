@@ -12,7 +12,7 @@ function MovieCard({movie: { Title, Poster, Year, imdbID }}) {
 
     function getMovieData() {
         (async () => {
-            const url = `http://localhost:5001/api/movie/omdbapi/id/?i=${imdbID}&plot=full`
+            const url = `http://localhost:5001/api/movie/omdbapi?i=${imdbID}&plot=short`
             try {
                 const res = await fetch(url)
                 const data = await res.json()
@@ -23,6 +23,9 @@ function MovieCard({movie: { Title, Poster, Year, imdbID }}) {
         })()
     }
     console.log(movieData)
+    const genreDisplay = movieData.Genre && movieData.Genre.split(", ").map(genre => 
+        <span className="movie-genre">{genre}</span>
+        )
 
     return (
 
@@ -30,7 +33,9 @@ function MovieCard({movie: { Title, Poster, Year, imdbID }}) {
             <img className="movie-poster" src={Poster} alt=""></img>
             <div className="card-content">
                 <h2 className="movie-title">{Title}</h2>
-                <p className="movie-year">Release Year: {Year}</p>
+                <p className="movie-release-date">Release date: {movieData.Released}</p>
+                <p className="movie-plot">{movieData.Plot}</p>
+                <div>Genres: {genreDisplay}</div>
             </div>
         </div>
     )
